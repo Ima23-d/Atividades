@@ -1,10 +1,16 @@
+
 N = int(input("Digite a quantidade de números: "))
 
 numeros = []
 
 for i in range(N):
-    num = float(input(f"Digite o {i+1}º número: "))
-    numeros.append(num)
+    while True:
+        num = float(input(f"Digite o {i+1}º número (entre 0 e 1000): "))
+        if 0 <= num <= 1000:
+            numeros.append(num)
+            break
+        else:
+            print("Valor inválido! Digite um número entre 0 e 1000.")
 
 menor = min(numeros)
 maior = max(numeros)
